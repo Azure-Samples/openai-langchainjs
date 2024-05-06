@@ -1,0 +1,14 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
+
+name: openai-sdk-demo-javascript
+metadata:
+  template: openai-sdk-demo-javascript@1.0.0
+
+hooks:
+  postprovision:
+    windows:
+      shell: pwsh
+      run: azd env get-values > .env
+    posix:
+      shell: sh
+      run: azd env get-values > .env

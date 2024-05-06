@@ -1,0 +1,78 @@
+{
+  "name": "openai-sdk-demo-javascript",
+  "version": "1.0.0",
+  "description": "",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "start": "npm run build && node dist/index.js",
+    "build": "tsc",
+    "clean": "rimraf dist",
+    "lint": "xo",
+    "lint:fix": "xo --fix",
+    "format": "prettier --list-different --write .",
+    "prepare": "simple-git-hooks || echo 'simple-git-hooks install skipped'"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/Azure-Samples/openai-sdk-demo-javascript.git"
+  },
+  "homepage": "https://github.com/Azure-Samples/openai-sdk-demo-javascript",
+  "bugs": {
+    "url": "https://github.com/Azure-Samples/openai-sdk-demo-javascript/issues"
+  },
+  "keywords": [
+    "openai",
+    "sdk",
+    "sample"
+  ],
+  "author": "Microsoft",
+  "license": "MIT",
+  "dependencies": {
+    "openai": "^4.41.0"
+  },
+  "devDependencies": {
+    "lint-staged": "^15.2.2",
+    "prettier": "^3.0.3",
+    "rimraf": "^5.0.5",
+    "simple-git-hooks": "^2.9.0",
+    "typescript": "^5.3.3",
+    "xo": "^0.58.0"
+  },
+  "engines": {
+    "node": ">=20",
+    "npm": ">=10"
+  },
+  "simple-git-hooks": {
+    "pre-commit": "npx lint-staged"
+  },
+  "lint-staged": {
+    "*.{js,ts,md,yaml,yml,html,css}": "prettier --write",
+    "*.{js,ts}": "xo --fix"
+  },
+  "xo": {
+    "space": true,
+    "prettier": true,
+    "envs": [
+      "node"
+    ],
+    "rules": {}
+  },
+  "prettier": {
+    "tabWidth": 2,
+    "semi": true,
+    "singleQuote": true,
+    "printWidth": 120,
+    "bracketSpacing": true,
+    "overrides": [
+      {
+        "files": [
+          "*.json"
+        ],
+        "options": {
+          "parser": "json"
+        }
+      }
+    ]
+  }
+}
