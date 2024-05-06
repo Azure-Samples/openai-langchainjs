@@ -31,7 +31,7 @@
   "dependencies": {
     "@azure/identity": "^4.2.0",
     "dotenv": "^16.4.5",
-    "openai": "^4.41.0"
+    "openai": "^4.41.1"
   },
   "devDependencies": {
     "lint-staged": "^15.2.2",
