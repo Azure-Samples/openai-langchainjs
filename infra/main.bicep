@@ -5,6 +5,10 @@ targetScope = 'subscription'
 @description('Name of the the environment which is used to generate a short unique hash used in all resources.')
 param environmentName string
 
+@minLength(1)
+@description('Primary location for all resources')
+param location string
+
 param resourceGroupName string = ''
 
 @description('Location for the OpenAI resource group')
@@ -14,17 +18,13 @@ param resourceGroupName string = ''
     type: 'location'
   }
 })
-param location string // Set in main.parameters.json
+param openAiLocation string // Set in main.parameters.json
 param openAiSkuName string = 'S0'
 
 param chatModelName string // Set in main.parameters.json
 param chatDeploymentName string = chatModelName
 param chatModelVersion string // Set in main.parameters.json
-param chatDeploymentCapacity int = 30
-param embeddingsModelName string // Set in main.parameters.json
-param embeddingsModelVersion string // Set in main.parameters.json
-param embeddingsDeploymentName string = embeddingsModelName
-param embeddingsDeploymentCapacity int = 30
+param chatDeploymentCapacity int = 15
 
 // Id of the user or app to assign application roles
 param principalId string = ''
@@ -45,7 +45,7 @@ module openAi 'core/ai/cognitiveservices.bicep' = {
   scope: resourceGroup
   params: {
     name: '${abbrs.cognitiveServicesAccounts}${resourceToken}'
-    location: location
+    location: openAiLocation
     tags: tags
     sku: {
       name: openAiSkuName
@@ -63,15 +63,6 @@ module openAi 'core/ai/cognitiveservices.bicep' = {
           name: 'Standard'
           capacity: chatDeploymentCapacity
         }
-      }
-      {
-        name: embeddingsDeploymentName
-        model: {
-          format: 'OpenAI'
-          name: embeddingsModelName
-          version: embeddingsModelVersion
-        }
-        capacity: embeddingsDeploymentCapacity
       }
     ]
   }
@@ -96,10 +87,8 @@ output AZURE_LOCATION string = location
 output AZURE_TENANT_ID string = tenant().tenantId
 output AZURE_RESOURCE_GROUP string = resourceGroup.name
 
-output AZURE_OPENAI_API_ENDPOINT string = 'https://${openAi.outputs.name}.openai.azure.com'
-output AZURE_OPENAI_API_DEPLOYMENT_NAME string = chatDeploymentName
-output AZURE_OPENAI_API_MODEL string = chatModelName
-output AZURE_OPENAI_API_MODEL_VERSION string = chatModelVersion
-output AZURE_OPENAI_API_EMBEDDINGS_DEPLOYMENT_NAME string = embeddingsDeploymentName
-output AZURE_OPENAI_API_EMBEDDINGS_MODEL string = embeddingsModelName
-output AZURE_OPENAI_API_EMBEDDINGS_MODEL_VERSION string = embeddingsModelVersion
+output AZURE_OPENAI_ENDPOINT string = 'https://${openAi.outputs.name}.openai.azure.com'
+output AZURE_OPENAI_DEPLOYMENT_NAME string = chatDeploymentName
+output AZURE_OPENAI_MODEL string = chatModelName
+output AZURE_OPENAI_MODEL_VERSION string = chatModelVersion
+output OPENAI_API_VERSION string = '2024-02-01'

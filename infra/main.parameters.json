@@ -9,22 +9,19 @@
       "value": "${AZURE_RESOURCE_GROUP}"
     },
     "location": {
-      "value": "${AZURE_LOCATION=eastus2}"
+      "value": "${AZURE_LOCATION}"
     },
     "principalId": {
       "value": "${AZURE_PRINCIPAL_ID}"
     },
+    "openAiLocation": {
+      "value": "${AZURE_OPENAI_LOCATION=eastus2}"
+    },
     "chatModelName": {
-      "value": "${AZURE_OPENAI_API_MODEL=gpt-35-turbo}"
+      "value": "${AZURE_OPENAI_MODEL=gpt-4}"
     },
     "chatModelVersion": {
-      "value": "${AZURE_OPENAI_API_MODEL_VERSION=0613}"
-    },
-    "embeddingsModelName": {
-      "value": "${AZURE_OPENAI_API_EMBEDDINGS_MODEL=text-embedding-ada-002}"
-    },
-    "embeddingsModelVersion": {
-      "value": "${AZURE_OPENAI_API_EMBEDDINGS_MODEL_VERSION=2}"
+      "value": "${AZURE_OPENAI_MODEL_VERSION=turbo-2024-04-09}"
     }
   }
 }
