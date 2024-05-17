@@ -20,6 +20,7 @@ param resourceGroupName string = ''
 })
 param openAiLocation string // Set in main.parameters.json
 param openAiSkuName string = 'S0'
+param openAiVersion string // Set in main.parameters.json
 
 param chatModelName string // Set in main.parameters.json
 param chatDeploymentName string = chatModelName
@@ -87,8 +88,6 @@ output AZURE_LOCATION string = location
 output AZURE_TENANT_ID string = tenant().tenantId
 output AZURE_RESOURCE_GROUP string = resourceGroup.name
 
-output AZURE_OPENAI_ENDPOINT string = 'https://${openAi.outputs.name}.openai.azure.com'
-output AZURE_OPENAI_DEPLOYMENT_NAME string = chatDeploymentName
-output AZURE_OPENAI_MODEL string = chatModelName
-output AZURE_OPENAI_MODEL_VERSION string = chatModelVersion
-output OPENAI_API_VERSION string = '2024-02-01'
+output AZURE_OPENAI_API_INSTANCE_NAME string = openAi.outputs.name
+output AZURE_OPENAI_API_DEPLOYMENT_NAME string = chatDeploymentName
+output AZURE_OPENAI_API_VERSION string = openAiVersion

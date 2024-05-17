@@ -17,6 +17,9 @@
     "openAiLocation": {
       "value": "${AZURE_OPENAI_LOCATION=eastus2}"
     },
+    "openAiVersion": {
+      "value": "${AZURE_OPENAI_VERSION=2024-04-09}"
+    },
     "chatModelName": {
       "value": "${AZURE_OPENAI_MODEL=gpt-4}"
     },
