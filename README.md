@@ -8,6 +8,8 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-blue?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 
+[Run the sample](#run-the-sample) • [Resources](#resources)
+
 </div>
 
 This sample project demonstrates how to use Azure OpenAI using [LangChain.js](https://js.langchain.com/) and the [`@langchain/openai`](https://www.npmjs.com/package/@langchain/openai) package.
@@ -53,6 +55,28 @@ npm start
 ```
 
 This will run the sample and output the results to the console, you should see an answer to the "Hello World!" prompt.
+
+### Clean up
+
+To clean up all the Azure resources created by this sample:
+
+1. Run `azd down --purge`
+2. When asked if you are sure you want to continue, enter `y`
+
+The resource group and all the resources will be deleted.
+
+## Resources
+
+Here are some resources to learn more about the technologies used in this sample:
+
+- [Azure OpenAI Service](https://learn.microsoft.com/azure/ai-services/openai/overview)
+- [LangChain.js documentation](https://js.langchain.com)
+- [Generative AI For Beginners](https://github.com/microsoft/generative-ai-for-beginners)
+- [Ask YouTube: LangChain.js + Azure Quickstart sample](https://github.com/Azure-Samples/langchainjs-quickstart-demo)
+- [Serverless AI Chat with RAG using LangChain.js](https://github.com/Azure-Samples/serverless-chat-langchainjs/)
+- [Chat + Enterprise data with Azure OpenAI and Azure AI Search](https://github.com/Azure-Samples/azure-search-openai-javascript)
+
+You can also find [more Azure AI samples here](https://github.com/Azure-Samples/azureai-samples).
 
 ## Contributing
 
