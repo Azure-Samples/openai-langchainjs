@@ -10,15 +10,12 @@ async function main() {
 
   const azureOpenAIApiVersion: string = process.env.AZURE_OPENAI_API_VERSION ?? '';
 
-  const azureChatModel: string = process.env.AZURE_CHAT_MODEL ?? '';
-
   const azureADTokenProvider = CredentialUtils.getBearerTokenProvider();
 
   const llm = new AzureChatOpenAI({
     azureOpenAIApiDeploymentName,
     azureOpenAIApiVersion,
     azureADTokenProvider,
-    modelName: azureChatModel,
   });
 
   const result = await llm.invoke('Hello World!');
