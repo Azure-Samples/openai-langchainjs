@@ -38,6 +38,12 @@ In order to deploy the Azure OpenAI resources, you also need the following:
 
 First, [fork](https://github.com/Azure-Samples/open-langchainjs/fork) and clone the repository or [open it in GitHub Codespaces](https://codespaces.new/Azure-Samples/openai-langchainjs?hide_repo_select=true&ref=main&quickstart=true).
 
+In the project directory, open a terminal and run the following command to install the dependencies:
+
+```bash
+npm install
+```
+
 ### Create AzureOpenAI Resources
 
 > [!INFO]
