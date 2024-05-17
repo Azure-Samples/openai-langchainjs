@@ -8,7 +8,7 @@
 [![TypeScript](https://img.shields.io/badge/TypeScript-blue?style=flat-square&logo=typescript&logoColor=white)](https://www.typescriptlang.org)
 [![License](https://img.shields.io/badge/License-MIT-yellow?style=flat-square)](LICENSE)
 
-[Run the sample](#run-the-sample) • [Resources](#resources)
+[Run the sample](#run-the-sample) • [Resources](#resources) • [FAQ](#faq)
 
 </div>
 
@@ -36,7 +36,12 @@ In order to deploy the Azure OpenAI resources, you also need the following:
 
 First, [fork](https://github.com/Azure-Samples/open-langchainjs/fork) and clone the repository or [open it in GitHub Codespaces](https://codespaces.new/Azure-Samples/openai-langchainjs?hide_repo_select=true&ref=main&quickstart=true).
 
-Then open a terminal in the project directory and run the following commands to create the Azure resources needed to run this sample:
+### Create AzureOpenAI Resources
+
+> [!INFO]
+> See the [cost estimation](./docs/cost.md) details for running this sample on Azure.
+
+Open a terminal in the project directory and run the following commands to create the Azure resources needed to run this sample:
 
 ```bash
 azd auth login
@@ -48,6 +53,9 @@ You will be prompted to select a base location for the resources. If you're unsu
 Once the deployment is complete a `.env` file will be created at the root of the project with the necessary environment variables to run the sample.
 
 You only need to deploy the resource once.
+
+### Run the code
+
 To run the sample, use the following command:
 
 ```bash
@@ -55,6 +63,8 @@ npm start
 ```
 
 This will run the sample and output the results to the console, you should see an answer to the "Hello World!" prompt.
+
+Open the file [`src/index.ts`](src/index.ts) to see how the code works.
 
 ### Clean up
 
@@ -77,6 +87,10 @@ Here are some resources to learn more about the technologies used in this sample
 - [Chat + Enterprise data with Azure OpenAI and Azure AI Search](https://github.com/Azure-Samples/azure-search-openai-javascript)
 
 You can also find [more Azure AI samples here](https://github.com/Azure-Samples/azureai-samples).
+
+## FAQ
+
+You can find answers to frequently asked questions in the [FAQ](./docs/faq.md).
 
 ## Contributing
 
