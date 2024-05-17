@@ -16,8 +16,6 @@ description: Build your AI application using LLMs with LangChain.js, TypeScript 
 
 <!-- Learn samples onboarding: https://review.learn.microsoft.com/en-us/help/contribute/samples/process/onboarding?branch=main -->
 <!-- prettier-ignore -->
-<div align="center">
-
 ## Overview
 
 This sample project demonstrates how to use Azure OpenAI using [LangChain.js](https://js.langchain.com/) and the [`@langchain/openai`](https://www.npmjs.com/package/@langchain/openai) package.
