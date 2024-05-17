@@ -1,7 +1,7 @@
 {
-  "name": "openai-sdk-demo-javascript",
+  "name": "openai-langchainjs",
   "version": "1.0.0",
-  "description": "",
+  "description": "Azure OpenAI LangChain.js hello world sample",
   "private": true,
   "type": "module",
   "scripts": {
@@ -15,15 +15,18 @@
   },
   "repository": {
     "type": "git",
-    "url": "https://github.com/Azure-Samples/openai-sdk-demo-javascript.git"
+    "url": "https://github.com/Azure-Samples/openai-langchainjs.git"
   },
-  "homepage": "https://github.com/Azure-Samples/openai-sdk-demo-javascript",
+  "homepage": "https://github.com/Azure-Samples/openai-langchainjs",
   "bugs": {
-    "url": "https://github.com/Azure-Samples/openai-sdk-demo-javascript/issues"
+    "url": "https://github.com/Azure-Samples/openai-langchainjs/issues"
   },
   "keywords": [
+    "azure",
     "openai",
     "sdk",
+    "langchain",
+    "javascript",
     "sample"
   ],
   "author": "Microsoft",
@@ -31,8 +34,7 @@
   "dependencies": {
     "@azure/identity": "^4.2.0",
     "@langchain/openai": "^0.0.31",
-    "dotenv": "^16.4.5",
-    "openai": "^4.41.1"
+    "dotenv": "^16.4.5"
   },
   "devDependencies": {
     "lint-staged": "^15.2.2",
@@ -61,11 +63,7 @@
     ],
     "rules": {
       "@typescript-eslint/naming-convention": "off"
-    },
-    "ignores": [
-      "./src/hello-world.ts",
-      "./src/utils/credentialUtils.ts"
-    ]
+    }
   },
   "prettier": {
     "tabWidth": 2,

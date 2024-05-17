@@ -1,8 +1,8 @@
 # yaml-language-server: $schema=https://raw.githubusercontent.com/Azure/azure-dev/main/schemas/v1.0/azure.yaml.json
 
-name: openai-sdk-demo-javascript
+name: openai-langchainjs
 metadata:
-  template: openai-sdk-demo-javascript@1.0.0
+  template: openai-langchainjs@1.0.0
 
 hooks:
   postprovision:
