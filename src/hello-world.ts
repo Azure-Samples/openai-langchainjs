@@ -1,6 +1,8 @@
-import { CredentialUtils } from './utils/credentialUtils';
+import process from 'node:process';
 import { AzureChatOpenAI } from '@langchain/openai';
-import * as dotenv from 'dotenv';
+import dotenv from 'dotenv';
+import { CredentialUtils } from './utils/credential-utils.js';
+
 dotenv.config();
 
 async function main() {
@@ -10,12 +12,12 @@ async function main() {
 
   const azureChatModel: string = process.env.AZURE_CHAT_MODEL ?? '';
 
-  const bearerTokenProvider = CredentialUtils.getBearerTokenProvider();
+  const azureADTokenProvider = CredentialUtils.getBearerTokenProvider();
 
   const llm = new AzureChatOpenAI({
     azureOpenAIApiDeploymentName,
     azureOpenAIApiVersion,
-    azureADTokenProvider: bearerTokenProvider,
+    azureADTokenProvider,
     modelName: azureChatModel,
   });
 
@@ -23,6 +25,8 @@ async function main() {
   console.log(result.content);
 }
 
-main().catch((err) => {
-  console.error('Error running sample:', err);
-});
+try {
+  await main();
+} catch (error) {
+  console.error('Error running sample:', error);
+}
