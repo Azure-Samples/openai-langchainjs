@@ -46,7 +46,7 @@ npm install
 
 ### Create AzureOpenAI Resources
 
-> [!INFO]
+> [!NOTE]
 > See the [cost estimation](./docs/cost.md) details for running this sample on Azure.
 
 Open a terminal in the project directory and run the following commands to create the Azure resources needed to run this sample:
