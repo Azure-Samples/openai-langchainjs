@@ -32,7 +32,7 @@
   "author": "Microsoft",
   "license": "MIT",
   "dependencies": {
-    "@azure/identity": "^4.2.0",
+    "@azure/identity": "^4.2.1",
     "@langchain/openai": "^0.0.31",
     "dotenv": "^16.4.5"
   },
